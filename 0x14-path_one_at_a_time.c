@@ -11,7 +11,7 @@ int main(void)
 {
 	char *token;
 
-	token = strtok(_getenv("PATH"), "/");
+	token = strtok(getenv("PATH"), "/");
 	token = strtok(NULL, "/ :");
 	while (token)
 	{

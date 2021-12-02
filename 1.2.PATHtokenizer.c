@@ -6,7 +6,7 @@
  * @string: the string to be tokenized and stored in array
  * Return: a pointer to an array of pointers to char
  */
-char **tokenizer(char *string)
+char **path_tokenizer(char *string)
 {
 	int bufsize = 1024, ctr = 0;
 	char **token_array; /**to store all the tokens*/
@@ -18,12 +18,12 @@ char **tokenizer(char *string)
 		exit(EXIT_FAILURE);
 	}
 
-	token = strtok(string, "\n\r\t: /");/**the assign the first token*/
+	token = strtok(string, "\n\r\t:");/**the assign the first token*/
 	/**In ASCII: " " = 32; \t = 9; \r = 13; \n = 10; \a = 7;*/
 	while (token != NULL) /** the walk the string and store tokens in array*/
 	{
 		token_array[ctr++] = token;
-		token = strtok(NULL, "\n\r\t: /");
+		token = strtok(NULL, "\n\r\t:");
 	}
 	token_array[ctr] = 0;/** add sentinel value to know when array ends*/
 	return (token_array);

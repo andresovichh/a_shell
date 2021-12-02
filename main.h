@@ -16,11 +16,14 @@
 #include <sys/wait.h>
 #include <errno.h>
 #define BUFFER 1024
+int _execute_nobuiltin(char **pathname, char **arguments);
+char **path_tokenizer(char *string);
 char *_getenv(const char *name);
 extern char **environ;
 int **cmd_to_av(char *input_string);
 char **tokenizer(char *string);
 char *_getline(void);
+void _getenv2(char **env);
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -31,9 +34,9 @@ char *_getline(void);
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+    	unsigned int len;
+    	struct list_s *next;
 } list_t;
 
 

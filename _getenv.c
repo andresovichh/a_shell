@@ -26,12 +26,12 @@ char *_getenv(const char *name)
 		/** then check if environ is equal to name variable*/
 		if (strncmp(environ[i], name, len) == 0)
 		{
-			printf("%s\n", environ[i]);
+			/** printf("%s\n", environ[i]);*/
 			return (environ[i]);
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 
 }
 

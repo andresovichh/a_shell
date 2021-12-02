@@ -9,15 +9,18 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <signal.h>
+#include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <errno.h>
 #define BUFFER 1024
-char **tokenizer(char *ptr);
 char *_getenv(const char *name);
 extern char **environ;
 int **cmd_to_av(char *input_string);
+char **tokenizer(char *string);
+char *_getline(void);
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)

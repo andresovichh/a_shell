@@ -26,7 +26,7 @@ char **tokenizer(char *string)
 		token = strtok(NULL, " \t\r\n\a:/");
 	}
 	token_array[ctr] = 0;/** add sentinel value to know when array ends*/
-  return (token_array);
+	return (token_array);
   /**
    * One issue could be that you have to duplicate the string, because strtok
    * works on the provided string, and if it can't modify it, it will dump.

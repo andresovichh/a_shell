@@ -30,9 +30,9 @@ int main(void)
 		while (toks[i])
 		{
 			/** this should check if user types exit*/
-			if (strcmp(toks[i], "ls") == 0)
+			if (strcmp(toks[i], "exit") == 0)
 			{
-				printf("I received ls");
+				printf("If you type exit");
 				status = 0;
 			}
 			printf("position:%d string:%s\n", i, toks[i]);
